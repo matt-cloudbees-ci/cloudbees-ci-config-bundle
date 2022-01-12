@@ -1,5 +1,5 @@
 apiVersion: "1"
-version: "3"
+version: "4"
 id: "cloudbees-ci-workshop-controller"
 description: "CloudBees CI configuration bundle for the CloudBees CI Workshop"
 availabilityPattern: "cloudbees-ci-workshop/matt-cloudbees-ci/controller"
@@ -11,3 +11,5 @@ catalog:
   - "plugin-catalog.yaml"
 items:
   - "items.yaml"
+rbac:
+  - "rbac.yaml"
