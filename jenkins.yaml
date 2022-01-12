@@ -7,13 +7,14 @@ cloudbees-pipeline-policies:
       - entirePipelineTimeoutRule:
           maxTime: 30
 jenkins:
+  authorizationStrategy: "cloudBeesRoleBasedAccessControl"
   globalNodeProperties:
   - envVars:
       env:
       - key: "BUNDLE_ID"
         value: "${CASC_BUNDLE_ID}"
   quietPeriod: 0
-  systemMessage: 'Jenkins configured using CloudBees CI CasC - v4'
+  systemMessage: 'Jenkins configured using CloudBees CI CasC - v2'
 globalCloudBeesPipelineTemplateCatalog:
   catalogs:
   - branchOrTag: "main"
@@ -94,7 +95,7 @@ kube:
       - emptyDirVolume:
           memory: false
           mountPath: "/var/maven/"
-      yamlMergeStrategy: "override"    
+      yamlMergeStrategy: "override"
 credentials:
   system:
     domainCredentials:
